@@ -1,4 +1,3 @@
-
 import Header from "./components/Header";
 import BreedList from "./components/BreedList";
 import SearchBar from "./components/SearchBar";
@@ -8,6 +7,7 @@ import "./globals.css";
 export default async function ListView({ searchParams }) {
   const params = await searchParams;
   const query = params.query || "";
+  const hasSearched = Object.hasOwn(params, "query");
 
   console.log("Søgeord i page.js:", query);
 
@@ -26,7 +26,7 @@ export default async function ListView({ searchParams }) {
 
       {/* Grid med hundekort */}
       <div className="mx-4 my-6 grid grid-cols-2 gap-4 w-auto overflow-hidden rounded-xl">
-        <BreedList query={query} />
+        <BreedList query={query} hasSearched={hasSearched} />
       </div>
 
       {/* Footer */}

@@ -32,3 +32,5 @@ export default function BreedCard({ breed }) {
     </Link>
   );
 }
+
+/* Jeg vil gerne implementere favorit funktionen ud fra api'ets endpoint. vi gør dette med zustand da det skal bruges i næste bundne forudsætning */
