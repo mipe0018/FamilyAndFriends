@@ -63,7 +63,7 @@ if (!response.ok) {
           <img
             src={breed.image.url}
             alt={breed.name}
-            className="h-auto max-h-[500px] w-full rounded-xl object-cover shadow-lg"
+            className="h-auto max-h-125 w-full rounded-xl object-cover shadow-lg"
           />
         ) : (
           <div className="flex h-64 items-center justify-center rounded-xl bg-gray-100">

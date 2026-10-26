@@ -7,9 +7,9 @@ import "./globals.css";
 
 export default async function ListView({ searchParams }) {
   const params = await searchParams;
-  const search = params.search || "";
+  const query = params.query || "";
 
-  console.log("Søgeord i page.js:", search);
+  console.log("Søgeord i page.js:", query);
 
   return (
     <>
@@ -22,11 +22,11 @@ export default async function ListView({ searchParams }) {
       </div>
 
       {/* Søgefelt */}
-      <SearchBar search={search} />
+      <SearchBar query={query} />
 
       {/* Grid med hundekort */}
       <div className="mx-4 my-6 grid grid-cols-2 gap-4 w-auto overflow-hidden rounded-xl">
-        <BreedList search={search} />
+        <BreedList query={query} />
       </div>
 
       {/* Footer */}

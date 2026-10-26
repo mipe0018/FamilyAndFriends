@@ -1,6 +1,6 @@
 import BreedCard from "./BreedCard";
 
-export default async function BreedList({ search = "" }) {
+export default async function BreedList({ query = "" }) {
   const response = await fetch(
     "https://api.thedogapi.com/v1/breeds",
     {
@@ -18,13 +18,13 @@ export default async function BreedList({ search = "" }) {
 
   const breeds = await response.json();
 
-  console.log("Søgeord i BreedList:", search);
+  console.log("Søgeord i BreedList:", query);
   console.log("Antal hunde før filtrering:", breeds.length);
 
-  const searchTerm = search.trim().toLowerCase();
+  const queryTerm = query.trim().toLowerCase();
 
   const filteredBreeds = breeds.filter((breed) =>
-    breed.name.toLowerCase().includes(searchTerm)
+    breed.name.toLowerCase().includes(queryTerm)
   );
 
   console.log(

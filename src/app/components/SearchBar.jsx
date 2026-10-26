@@ -1,7 +1,7 @@
 
 import { LuSearch } from "react-icons/lu";
 
-const SearchBar = ({ search = "" }) => {
+const SearchBar = ({ query = "" }) => {
   return (
     <form
       action="/"
@@ -20,13 +20,12 @@ const SearchBar = ({ search = "" }) => {
         />
       </button>
 
-      <input
-        type="search"
-        name="search"
-        defaultValue={search}
-        placeholder="Search Breeds"
-        className="w-full rounded-full border-2 border-gray-500 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
-      />
+<input
+  type="search"
+  name="query"
+  defaultValue={query}
+  placeholder="Search Breeds"
+/>
     </form>
   );
 };
